@@ -12,6 +12,8 @@ import pandas as pd
 import psycopg2
 from dotenv import load_dotenv
 
+from src.pipeline import prod_guard
+
 load_dotenv()
 
 
@@ -33,7 +35,9 @@ def _get_url() -> str:
 @contextlib.contextmanager
 def connection():
     """Yield a psycopg2 connection; close it on exit regardless of exceptions."""
-    conn = psycopg2.connect(_get_url(), connect_timeout=10)
+    url = _get_url()
+    prod_guard.check(url)  # refuses a fly tunnel to production
+    conn = psycopg2.connect(url, connect_timeout=10)
     try:
         yield conn
     finally:
