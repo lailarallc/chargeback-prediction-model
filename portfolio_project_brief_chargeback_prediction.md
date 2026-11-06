@@ -80,7 +80,7 @@ Roll per-SKU risk into an executive priority list ranked not by data volume but 
 
 #### The Output
 
-- **The Predictive Exposure Ledger:** an executive view of upcoming shipments marked with risk status and dollar exposure, each flag accompanied by the specific data field triggering it ("missing case dimensions → $4,200 exposure at Walmart").
+- **The Predictive Exposure Ledger:** an executive view of upcoming shipments marked with risk status and dollar exposure, each flag accompanied by the specific data field triggering it ("missing case dimensions → $4,200 exposure at the national mass retailer").
 - **The Data Remediation Business Case:** the prevention roadmap — specific data fixes mapped to projected cash retention, ranked by recovery value, ready for a board or senior-staff meeting.
 
 Delivered in whatever form planning settles on — the analytical substance is the harmonization, the point-in-time join, and the attribution, not the presentation layer.

@@ -35,7 +35,7 @@ The result: brands stay on a dispute treadmill, recovering some of each quarter'
 
 ### 1. Interactive Risk Ledger + Intervention Simulator (one React app, two views)
 
-**Risk Ledger view:** Upcoming shipments ranked by predicted chargeback probability and dollar exposure. Each row carries a plain-language attribution string naming the specific data condition driving the risk ("missing case dimensions → $4,200 exposure at Walmart"). Filterable by retailer, SKU, risk tier.
+**Risk Ledger view:** Upcoming shipments ranked by predicted chargeback probability and dollar exposure. Each row carries a plain-language attribution string naming the specific data condition driving the risk ("missing case dimensions → $4,200 exposure at the national mass retailer"). Filterable by retailer, SKU, risk tier.
 
 **Intervention Simulator view:** Toggle specific data quality fixes (e.g., "populate case dimensions on SKU X at Walmart") and see projected chargeback reduction and prevention ROI update in real time. The only artifact of its kind — no recovery consultant offers this.
 
