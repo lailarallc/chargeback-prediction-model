@@ -1,3 +1,5 @@
+import { retailerLabel } from "../displayLabels";
+
 interface Props {
   retailers: string[];
   value: string;
@@ -16,7 +18,7 @@ export default function RetailerFilter({ retailers, value, onChange }: Props) {
         <option value="">All retailers</option>
         {retailers.map((r) => (
           <option key={r} value={r}>
-            {r}
+            {retailerLabel(r)}
           </option>
         ))}
       </select>

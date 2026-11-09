@@ -3,6 +3,7 @@ import type { RiskEntry } from "../types";
 import { formatDollars } from "../data";
 import RiskBadge from "../components/RiskBadge";
 import RetailerFilter from "../components/RetailerFilter";
+import { retailerLabel } from "../displayLabels";
 import "./RiskLedger.css";
 
 interface Props {
@@ -21,7 +22,10 @@ export default function RiskLedger({ entries }: Props) {
   const [tierFilter, setTierFilter] = useState<Set<RiskTier>>(new Set());
 
   const retailers = useMemo(
-    () => [...new Set(entries.map((e) => e.retailer))].sort(),
+    () =>
+      [...new Set(entries.map((e) => e.retailer))].sort((a, b) =>
+        retailerLabel(a).localeCompare(retailerLabel(b))
+      ),
     [entries]
   );
 
@@ -123,7 +127,7 @@ export default function RiskLedger({ entries }: Props) {
           <div className="pin-card-body">
             <div className="pin-detail">
               <span className="pin-detail-label">Retailer</span>
-              <span className="pin-detail-value">{pinnedEntry.retailer}</span>
+              <span className="pin-detail-value">{retailerLabel(pinnedEntry.retailer)}</span>
             </div>
             <div className="pin-detail">
               <span className="pin-detail-label">Ship date</span>
@@ -178,7 +182,7 @@ export default function RiskLedger({ entries }: Props) {
                   onKeyDown={(ev) => { if (ev.key === "Enter" || ev.key === " ") togglePin(e); }}
                 >
                   <td>{e.sku}</td>
-                  <td>{e.retailer}</td>
+                  <td>{retailerLabel(e.retailer)}</td>
                   <td>{e.ship_date ?? "—"}</td>
                   <td>
                     <RiskBadge tier={e.risk_tier} />
