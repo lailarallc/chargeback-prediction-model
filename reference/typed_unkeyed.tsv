@@ -1,0 +1,86 @@
+# Typed figures this repo prints with no canon key (owner, 2026-11-15; plan U19, U22).
+# One row per figure per location. The platform's fleet check holds the row count to a ceiling that only
+# falls: give a figure a key (or stop printing it) and delete its row. listed=yes: the read map names it, and
+# U19 owes its key; listed=no: U22 works it down. Generated from the 2026-11-15 manifest pass.
+file_line	printed	exact_value	meaning	source	kind	listed
+README.md:17	~$25M	25332687.28	company revenue scale	prose only; nearest canon revenue.combined_invoiced.cy2025	prose-only	no
+engagement.demo.yml:21	2026-01-02		analysis as-of date (data window end)	config literal	assumption	no
+engagement.demo.yml:28	37	37	chargeback window months	config literal	assumption	yes
+frontend/public/json/summary.json:11	0.6986	0.6986	model AUC on held-out synthetic labels	frontend/public/json/summary.json model_auc	repo-export	no
+frontend/public/json/summary.json:2	446200.06	446200.06	retailer chargebacks total, 37 months Jan 2023-Jan 2026	frontend/public/json/summary.json total_chargeback_amount (src/pipeline/extract.py:23 SELECT from raw.retailer_chargebacks; roadmap src/pipeline/roadmap.py; export src/pipeline/export.py:88-124)	repo-export	no
+frontend/public/json/summary.json:3	324887.78	324887.78	preventable chargebacks (historical loss x preventability fraction), 37 months	frontend/public/json/summary.json total_preventable	repo-export	no
+frontend/public/json/summary.json:4	0.7281	72.81	preventable share of chargeback dollars	frontend/public/json/summary.json preventable_pct 0.7281	repo-export	no
+frontend/public/json/summary.json:6	273	273	chargeback count, root cause asn_timing_infraction, 37 months	frontend/public/json/summary.json root_cause_counts.asn_timing_infraction	repo-export	no
+frontend/public/json/summary.json:7	300	300	chargeback count, root cause data_compliance_error, 37 months	frontend/public/json/summary.json root_cause_counts.data_compliance_error	repo-export	no
+frontend/public/json/summary.json:8	2284	2284	chargeback count, root cause logistics_overage, 37 months	frontend/public/json/summary.json root_cause_counts.logistics_overage	repo-export	no
+frontend/public/json/summary.json:9	16	16	chargeback count, root cause pricing_discrepancy, 37 months	frontend/public/json/summary.json root_cause_counts.pricing_discrepancy	repo-export	no
+frontend/src/App.tsx:45	${Math.round(total/1000)}K (renders $446K)	446200.06	retailer chargebacks, 37 months	frontend/public/json/summary.json total_chargeback_amount (src/pipeline/extract.py:23 SELECT from raw.retailer_chargebacks; roadmap src/pipeline/roadmap.py; export src/pipeline/export.py:88-124)	repo-export	no
+frontend/src/App.tsx:46	37 months (Jan 2023 – Jan 2026)	37	chargeback window length	hardcoded in App.tsx:46; engagement.demo.yml:28 window_months	prose-only	yes
+frontend/src/App.tsx:47	${Math.round(prev/1000)}K (renders $325K)	324887.78	preventable chargebacks, 37 months	frontend/public/json/summary.json total_preventable	repo-export	yes
+frontend/src/App.tsx:48	{Math.round(pct*100)}% (renders 73%)	72.81	preventable share	frontend/public/json/summary.json preventable_pct 0.7281	repo-export	yes
+portfolio_project_brief_chargeback_prediction.md:100	~73%	72.81	preventable share (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:104	~$325K over 37 months ($105,369/yr)	324887.78	preventable chargebacks (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:110	73% ... ~$105K/yr	105369.0	preventable share and annual value (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:116	$325K of this $446K	324887.78	preventable of total (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:174	$446,200 ... 37 months	446200.06	chargebacks (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:176	73%	72.81	preventable share (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:179	$325K over 37 months ($105,369/yr)	324887.78	preventable (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:181	$325K of ... $446K	324887.78	headline (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:32	$446K over three years	446200.06	chargebacks total (brief)	prose only; = frontend/public/json/summary.json	prose-only	no
+portfolio_project_brief_chargeback_prediction.md:79	73%	72.81	preventable share (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:79	$325K over 37 months	324887.78	preventable chargebacks (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:79	$105,369/yr	105369.0	preventable chargebacks annualized (324887.78 x12/37)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:90	$446,200 ... 37 months ... $144,714/yr	446200.06	chargebacks total and annualized (brief)	prose only	prose-only	yes
+portfolio_project_brief_chargeback_prediction.md:94	$245K / $171K		Logistics overage historical loss / prevention value (brief table)	prose only	prose-only	no
+portfolio_project_brief_chargeback_prediction.md:95	$143K / $114K		Data compliance errors historical loss / prevention value (brief table)	prose only	prose-only	no
+portfolio_project_brief_chargeback_prediction.md:96	$42K / $29K		ASN timing infractions historical loss / prevention value (brief table)	prose only	prose-only	no
+portfolio_project_brief_chargeback_prediction.md:97	$17K / $10K		Pricing discrepancies historical loss / prevention value (brief table)	prose only	prose-only	no
+portfolio_project_brief_chargeback_prediction.md:98	$446K / ~$325K / ~0.4 points of net margin a year		37-month totals and margin effect (brief table)	prose only	prose-only	yes
+quarto/_site/methodology.html:345	151,231 / 37,808	151231	training / test set rows (shipment-SKU)	rendered from output/frames/model_performance.csv	repo-export	no
+quarto/_site/methodology.html:359	0.6986	0.6986	model AUC	output/frames/model_performance.csv auc	repo-export	no
+quarto/_site/methodology.html:367	0.72	0.7215	model recall at 0.5	output/frames/model_performance.csv recall; tests/test_demo_golden.py:113	repo-export	no
+quarto/_site/prevention_roadmap.html:143	$446,200 ... 73%	446200.06	chargebacks over 37 months; 73% preventable (section heading)	quarto/prevention_roadmap.qmd:59	repo-export	yes
+quarto/_site/prevention_roadmap.html:144	$446,200	446200.06	retailer chargebacks, 37 months	quarto/prevention_roadmap.qmd:61	repo-export	yes
+quarto/_site/prevention_roadmap.html:144	$144,714 a year	144714.21	annualized chargebacks (total x12/37)	quarto/prevention_roadmap.qmd:61; tests/test_demo_golden.py:89	repo-export	no
+quarto/_site/prevention_roadmap.html:144	$324,888	324887.78	preventable chargebacks, 37 months	quarto/prevention_roadmap.qmd:61	repo-export	no
+quarto/_site/prevention_roadmap.html:217	$245K	244902	historical chargeback loss, Logistics Overage, 37 months (exact to the dollar from the chart labels)	rendered roadmap table; chart text in quarto/_site/prevention_roadmap.html ($244902)	repo-export	no
+quarto/_site/prevention_roadmap.html:218	70%	70	preventability fraction, Logistics Overage	constant src/pipeline/roadmap.py:21-27; engagement.demo.yml:33-38	assumption	no
+quarto/_site/prevention_roadmap.html:219	$171K	171431.4	prevention value, Logistics Overage, 37 months (loss x fraction; loss rounded to dollar)	roadmap table, src/pipeline/roadmap.py	repo-export	no
+quarto/_site/prevention_roadmap.html:220	2284	2284	chargeback count, Logistics Overage, 37 months	frontend/public/json/summary.json root_cause_counts	repo-export	no
+quarto/_site/prevention_roadmap.html:224	$143K	142514	historical chargeback loss, Data Compliance Error, 37 months (exact to the dollar from the chart labels)	rendered roadmap table; chart text in quarto/_site/prevention_roadmap.html ($142514)	repo-export	no
+quarto/_site/prevention_roadmap.html:225	80%	80	preventability fraction, Data Compliance Error	constant src/pipeline/roadmap.py:21-27; engagement.demo.yml:33-38	assumption	no
+quarto/_site/prevention_roadmap.html:226	$114K	114011.2	prevention value, Data Compliance Error, 37 months (loss x fraction; loss rounded to dollar)	roadmap table, src/pipeline/roadmap.py	repo-export	no
+quarto/_site/prevention_roadmap.html:227	300	300	chargeback count, Data Compliance Error, 37 months	frontend/public/json/summary.json root_cause_counts	repo-export	no
+quarto/_site/prevention_roadmap.html:231	$42K	41749	historical chargeback loss, ASN Timing Infraction, 37 months (exact to the dollar from the chart labels)	rendered roadmap table; chart text in quarto/_site/prevention_roadmap.html ($41749)	repo-export	no
+quarto/_site/prevention_roadmap.html:232	70%	70	preventability fraction, ASN Timing Infraction	constant src/pipeline/roadmap.py:21-27; engagement.demo.yml:33-38	assumption	no
+quarto/_site/prevention_roadmap.html:233	$29K	29224.3	prevention value, ASN Timing Infraction, 37 months (loss x fraction; loss rounded to dollar)	roadmap table, src/pipeline/roadmap.py	repo-export	no
+quarto/_site/prevention_roadmap.html:234	273	273	chargeback count, ASN Timing Infraction, 37 months	frontend/public/json/summary.json root_cause_counts	repo-export	no
+quarto/_site/prevention_roadmap.html:238	$17K	17036	historical chargeback loss, Pricing Discrepancy, 37 months (exact to the dollar from the chart labels)	rendered roadmap table; chart text in quarto/_site/prevention_roadmap.html ($17036)	repo-export	no
+quarto/_site/prevention_roadmap.html:239	60%	60	preventability fraction, Pricing Discrepancy	constant src/pipeline/roadmap.py:21-27; engagement.demo.yml:33-38	assumption	no
+quarto/_site/prevention_roadmap.html:240	$10K	10221.6	prevention value, Pricing Discrepancy, 37 months (loss x fraction; loss rounded to dollar)	roadmap table, src/pipeline/roadmap.py	repo-export	no
+quarto/_site/prevention_roadmap.html:241	16	16	chargeback count, Pricing Discrepancy, 37 months	frontend/public/json/summary.json root_cause_counts	repo-export	no
+quarto/_site/prevention_roadmap.html:348	$178,480	178480.02	dispute recovery at a 40% win rate on the 37-month total	quarto/prevention_roadmap.qmd:210 total x 0.40	repo-export	no
+quarto/_site/prevention_roadmap.html:348	40% win rate / 30–45%	40	assumed dispute win rate	quarto/prevention_roadmap.qmd:210	assumption	no
+quarto/_site/tearsheet.html:124	$446K	446200.06	chargebacks over 37 months (headline card)	rendered from output/frames via quarto/tearsheet.qmd:73; = frontend/public/json/summary.json total	repo-export	no
+quarto/_site/tearsheet.html:132	$325K	324887.78	preventable at source (headline card)	quarto/tearsheet.qmd:77; = frontend/public/json/summary.json total_preventable	repo-export	yes
+quarto/_site/tearsheet.html:140	4 causes	4	fixable root conditions	quarto/tearsheet.qmd:81 n_causes	repo-export	no
+quarto/_site/tearsheet.html:147	73%	72.81	preventable share of 37-month total	quarto/tearsheet.qmd:86	repo-export	yes
+quarto/_site/tearsheet.html:148	30–45%		industry dispute win rate	prose only (quarto/tearsheet.qmd:88)	assumption	no
+quarto/methodology.qmd:129	approximately 1.5%		share of shipment-SKU rows with a chargeback	prose only	prose-only	yes
+quarto/methodology.qmd:151	96.5%	96.5	chargeback-to-shipment join rate	prose only (computed by src/pipeline/eda.py:141 at run time, not committed)	prose-only	yes
+quarto/methodology.qmd:151	AUC ≈ 0.50	0.50	baseline AUC on real chargeback labels	prose only	prose-only	no
+quarto/prevention_roadmap.qmd:156	$171K in prevention value ($245K historical loss)	171431.4	logistics overage prevention value and loss, typed in fig-cap	hand-typed fig-cap; tests/test_demo_golden.py:105-106	prose-only	no
+src/pipeline/eda.py:27	(5000, 7000)		expected row-count band for raw.retailer_chargebacks	constant src/pipeline/eda.py:27	assumption	no
+src/pipeline/eda.py:28	(10000, 20000)		expected row-count band for raw.retailer_deductions	constant src/pipeline/eda.py:28	assumption	no
+src/pipeline/eda.py:29	(40000, 50000)		expected row-count band for raw.retailer_shipments	constant src/pipeline/eda.py:29	assumption	no
+src/pipeline/eda.py:30	(20, 50)		expected row-count band for raw.product_master	constant src/pipeline/eda.py:30	assumption	yes
+src/pipeline/eda.py:31	(10, 1000)		expected row-count band for raw.distribution_log	constant src/pipeline/eda.py:31	assumption	no
+src/pipeline/eda.py:32	(5, 100)		expected row-count band for raw.retailer_deduction_codes	constant src/pipeline/eda.py:32	assumption	yes
+tests/test_demo_golden.py:105	171	171431.4	logistics overage prevention value, $K	output/frames/prevention_roadmap.csv (gitignored)	repo-export	no
+tests/test_demo_golden.py:106	245	244902	logistics overage historical loss, $K	output/frames/prevention_roadmap.csv (gitignored)	repo-export	no
+tests/test_demo_golden.py:112	0.6986	0.6986	model AUC	output/frames/model_performance.csv	repo-export	no
+tests/test_demo_golden.py:113	0.7215	0.7215	model recall	output/frames/model_performance.csv	repo-export	no
+tests/test_demo_golden.py:82	446200.06	446200.06	chargeback total, 37 months	frontend/public/json/summary.json total_chargeback_amount (src/pipeline/extract.py:23 SELECT from raw.retailer_chargebacks; roadmap src/pipeline/roadmap.py; export src/pipeline/export.py:88-124)	repo-export	no
+tests/test_demo_golden.py:89	144714	144714.21	annualized chargebacks	total x 12/37	repo-export	no
+tests/test_demo_golden.py:94	324887.78	324887.78	preventable total	frontend/public/json/summary.json total_preventable	repo-export	no
+tests/test_demo_golden.py:95	0.728	72.81	preventable share	frontend/public/json/summary.json preventable_pct 0.7281	repo-export	no
